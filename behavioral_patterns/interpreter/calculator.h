@@ -2,7 +2,7 @@
 #include <stdint.h> 
 
 class Context {
- 
+   // ANY GLOBAL INFORMATION NEEDED FOR INTERPRETATION CAN BE ADDED HERE
 };
 
 // ABSTRACT CLASS => Expression

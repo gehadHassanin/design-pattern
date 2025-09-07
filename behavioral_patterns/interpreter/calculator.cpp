@@ -22,7 +22,7 @@ int MulExpression::interpret(Context& context) {
 Interpreter::Interpreter(Context context) : context_(context) {}
 
 Expression* Interpreter::buildExpressionTree_(const std::string& exp) {
-    // Logic to parse expression and create expression tree
+    // LOGIC TO PARSE EXPRESSION AND CREATE EXPRESSION TREE
     MulExpression* mulExp = new MulExpression(new NumExpression(2), 
         new NumExpression(4));
     return new AddExpression(new NumExpression(1), mulExp);
@@ -30,6 +30,5 @@ Expression* Interpreter::buildExpressionTree_(const std::string& exp) {
 int Interpreter::interpret(const std::string& exp) { 
     // 1- ASSUME PARSING INPUT
     Expression* expTree = Interpreter::buildExpressionTree_(exp);
-    //delete expTree;
     return expTree->interpret(context_);
 }
