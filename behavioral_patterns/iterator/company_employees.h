@@ -24,8 +24,8 @@ class EmployeeIterator : public Iterator<Employee*> {
  public:
     using Employee_List = std::vector<Employee*>&;
     EmployeeIterator(Employee_List employees);
-    bool Has_next();
-    Employee* Get_next();
+    bool Has_next() override;
+    Employee* Get_next() override;
  private:
     Employee_List employees_;
     int current_pos_;
@@ -42,7 +42,7 @@ class Company : public Aggregate<T> {
  public:
     using List = std::vector<T>&;
     Company(List employees);
-    Iterator<T>* CreateIterator();
+    Iterator<T>* CreateIterator() override;
     ~Company() {};
  private:
     List employees_;
